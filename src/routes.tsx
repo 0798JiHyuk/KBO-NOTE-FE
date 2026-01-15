@@ -1,35 +1,24 @@
 import { useRoutes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import App from "./App";
 
-export default function Router() {
-  const elements = useRoutes([
+const Router = () => {
+  const routes = useRoutes([
     {
       path: "/",
-      element: <HomePage />,
-    },
-  ]);
-
-  return elements;
-}
-
-/* Example
-const elements = useRoutes([
-    {
-      path: '/',
-      element: <HomePage />,
-    },
-    {
-      path: '/login',
-      element: <LoginPage />,
-    },
-    {
-      // 중첩 라우팅도 객체 구조로 직관적 표현 가능
-      path: '/dashboard',
-      element: <DashboardLayout />, // Outlet이 들어있는 레이아웃
+      element: <App />,
       children: [
-        { path: 'profile', element: <ProfilePage /> },
-        { path: 'settings', element: <div>설정 페이지</div> },
+        {
+          index: true, // '/' 경로일 때 기본으로 보여줄 자식
+          element: <HomePage />,
+        },
+        // 다른 페이지도 여기에 추가 가능
+        // { path: 'about', element: <AboutPage /> }
       ],
     },
   ]);
- */
+
+  return routes;
+};
+
+export default Router;
