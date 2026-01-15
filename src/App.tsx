@@ -7,11 +7,12 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { QueryClient } from "@tanstack/react-query";
 import Router from "./routes";
+import {Outlet} from "react-router-dom"
 
 const queryClient = new QueryClient();
 function App() {
   return (
-        <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
     <MainContainer>
       <Outlet />
