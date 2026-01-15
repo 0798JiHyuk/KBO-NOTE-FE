@@ -1,12 +1,25 @@
-import './styles/App.css'
+import { Outlet } from "react-router-dom";
+import "./styles/App.css";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div className="app">
-      <h1>KBO Note</h1>
-      <p>React + TypeScript + Vite</p>
-    </div>
-  )
+    <MainContainer>
+      <Outlet />
+    </MainContainer>
+  );
 }
 
-export default App
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  > * {
+    width: 640px;
+  }
+`;
+
+export default App;

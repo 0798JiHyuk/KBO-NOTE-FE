@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const HomePage = () => {
   return (
     <Container>
       {/* Appbar */}
+      adgaa
       <Appbar>
         <AppbarContent>
           <Logo>KBO NOTE</Logo>
@@ -17,7 +18,6 @@ const HomePage = () => {
           </AppbarActions>
         </AppbarContent>
       </Appbar>
-
       {/* Player Section */}
       <PlayerSection>
         <PlayerCard active>
@@ -42,7 +42,6 @@ const HomePage = () => {
           <PlusIcon />
         </PlayerAddCard>
       </PlayerSection>
-
       {/* Content Container */}
       <ContentContainer>
         {/* Today's Match Section */}
@@ -149,7 +148,9 @@ const HomePage = () => {
                     <FeedCount>7</FeedCount>
                   </FeedAction>
                 </FeedMeta>
-                <FeedTitle>'김동주→김현수→양의지' 곰 동굴에서 역대 3번째 타격왕 등장</FeedTitle>
+                <FeedTitle>
+                  '김동주→김현수→양의지' 곰 동굴에서 역대 3번째 타격왕 등장
+                </FeedTitle>
               </FeedContent>
             </FeedItem>
 
@@ -166,7 +167,9 @@ const HomePage = () => {
                     <FeedCount>32</FeedCount>
                   </FeedAction>
                 </FeedMeta>
-                <FeedTitle>두목곰 양의지, 6년 만의 타격왕 복귀…'올해의 반전상' 품에 안다</FeedTitle>
+                <FeedTitle>
+                  두목곰 양의지, 6년 만의 타격왕 복귀…'올해의 반전상' 품에 안다
+                </FeedTitle>
               </FeedContent>
             </FeedItem>
           </FeedList>
@@ -208,7 +211,7 @@ const AppbarContent = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-family: 'Airlash Raiders', sans-serif;
+  font-family: "Airlash Raiders", sans-serif;
   font-size: 20px;
   color: white;
   margin: 0;
@@ -238,14 +241,16 @@ const WriteIcon = styled.div`
   width: 24px;
   height: 24px;
   background-color: white;
-  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z' fill='white'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z' fill='white'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 `;
 
 const SettingIcon = styled.div`
   width: 24px;
   height: 24px;
   background-color: white;
-  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='3' stroke='white' stroke-width='2'/%3E%3Cpath d='M12 1v6m0 6v10M23 12h-6m-4 0H1' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='3' stroke='white' stroke-width='2'/%3E%3Cpath d='M12 1v6m0 6v10M23 12h-6m-4 0H1' stroke='white' stroke-width='2'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 `;
 
 const PlayerSection = styled.div`
@@ -277,9 +282,9 @@ const PlayerImage = styled.div<{ active?: boolean }>`
   height: 72px;
   border-radius: 13.5px;
   border: ${(props) =>
-    props.active ? '1.125px solid #007aff' : '1px solid #eaecee'};
+    props.active ? "1.125px solid #007aff" : "1px solid #eaecee"};
   box-shadow: ${(props) =>
-    props.active ? '0px 0px 6.75px 0px rgba(0, 44, 103, 0.5)' : 'none'};
+    props.active ? "0px 0px 6.75px 0px rgba(0, 44, 103, 0.5)" : "none"};
   overflow: hidden;
   position: relative;
   background-color: #f9f9f9;
@@ -292,12 +297,12 @@ const PlayerImageInner = styled.div`
 `;
 
 const PlayerName = styled.p<{ active?: boolean }>`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
   letter-spacing: -0.56px;
-  color: ${(props) => (props.active ? '#111827' : '#9ca3af')};
+  color: ${(props) => (props.active ? "#111827" : "#9ca3af")};
   margin: 0;
   text-align: center;
 `;
@@ -322,7 +327,7 @@ const PlusIcon = styled.div`
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     background-color: #9ca3af;
   }
@@ -358,7 +363,7 @@ const Section = styled.section`
 `;
 
 const SectionTitle = styled.h2`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
@@ -399,7 +404,7 @@ const TeamLogo = styled.div`
 `;
 
 const TeamName = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -409,17 +414,17 @@ const TeamName = styled.p`
 `;
 
 const Score = styled.p<{ primary?: boolean }>`
-  font-family: 'Rocket Command', sans-serif;
+  font-family: "Rocket Command", sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 36px;
   letter-spacing: -2.24px;
-  color: ${(props) => (props.primary ? '#007aff' : '#111827')};
+  color: ${(props) => (props.primary ? "#007aff" : "#111827")};
   margin: 0;
 `;
 
 const ScoreDivider = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
@@ -438,7 +443,8 @@ const NoticeIcon = styled.div`
   width: 24px;
   height: 24px;
   background-color: #111827;
-  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' stroke='%23111827' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' stroke='%23111827' stroke-width='2'/%3E%3C/svg%3E")
+    center/contain no-repeat;
   flex-shrink: 0;
 `;
 
@@ -449,7 +455,7 @@ const MatchDetails = styled.div`
 `;
 
 const MatchText = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -462,7 +468,7 @@ const InningBadge = styled.div`
   background-color: #eaecee;
   border-radius: 999px;
   padding: 4px 12px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
@@ -511,7 +517,7 @@ const BadgeScroll = styled.div`
 `;
 
 const BadgeText = styled.span`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -552,7 +558,7 @@ const StatItem = styled.div`
 `;
 
 const StatLabel = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
@@ -561,7 +567,7 @@ const StatLabel = styled.p`
 `;
 
 const StatValue = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -616,18 +622,20 @@ const HeartIcon = styled.div`
   width: 24px;
   height: 24px;
   background-color: #111827;
-  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z' fill='%23111827'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z' fill='%23111827'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 `;
 
 const ChatIcon = styled.div`
   width: 24px;
   height: 24px;
   background-color: #111827;
-  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z' stroke='%23111827' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z' stroke='%23111827' stroke-width='2'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 `;
 
 const FeedCount = styled.span`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -636,7 +644,7 @@ const FeedCount = styled.span`
 `;
 
 const FeedTitle = styled.p`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 26px;
