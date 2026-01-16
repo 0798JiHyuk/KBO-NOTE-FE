@@ -3,52 +3,58 @@ import styled from "styled-components";
 import { theme } from "../styles/theme";
 import SearchIcon from "../assets/icons/search.svg";
 import CloseIcon from "../assets/icons/close.svg";
-import Button from "../components/button/ButtonDefault";
+import ButtonDefault from "../components/button/ButtonDefault";
+import ButtonGray from "../components/button/ButtonGray"; // 1. ButtonGray 임포트 추가
 import PlayerCardActive from "../components/landingPage/Active";
 import PlayerCardDefault from "../components/landingPage/Default";
 import { useNavigate } from 'react-router-dom';
 
-{/* 기본값 1 */ }
 const PLAYERS = [
   { id: 1, name: "양의지" },
-  { id: 2, name: "양의지" },
-  { id: 3, name: "양의지" },
+  { id: 2, name: "양의지" }
 ];
 
 const SearchPage = () => {
   const navigate = useNavigate();
-  const [selectedPlayerId, setSelectedPlayerId] = useState(1);
-
+  const [selectedPlayerId, setSelectedPlayerId] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleClear = () => {
     setSearchQuery("");
   };
 
+  const handleComplete = () => {
+    if (selectedPlayerId) {
+      console.log("선택된 선수 ID:", selectedPlayerId);
+    }
+  };
+
   return (
     <PageContainer>
       <HeaderFrame>
-        <IconWapper onClick={handleClear} style={{ cursor: 'pointer' }}>
+        <IconWapper onClick={() => navigate(-1)} style={{ cursor: 'pointer' }}>
           <Icon src={CloseIcon} alt="close icon" />
         </IconWapper>
         <TeamSearchWapper>
-          <SearchInput 
+          <SearchInput
             placeholder="선수를 검색해보세요"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <IconWapper>
+          <IconWapper onClick={handleClear} style={{ cursor: 'pointer' }}>
             <Icon src={SearchIcon} alt="search icon" />
           </IconWapper>
         </TeamSearchWapper>
       </HeaderFrame>
+
       <CardWapper>
-        {PLAYERS.map((player) => (
-          player.id === selectedPlayerId ? (
+        {PLAYERS.map((player) => {
+          const isSelected = player.id === selectedPlayerId;
+          return isSelected ? (
             <PlayerCardActive
               key={player.id}
               playerName={player.name}
-              onClick={() => setSelectedPlayerId(player.id)}
+              onClick={() => setSelectedPlayerId(null)} 
             />
           ) : (
             <PlayerCardDefault
@@ -56,11 +62,21 @@ const SearchPage = () => {
               playerName={player.name}
               onClick={() => setSelectedPlayerId(player.id)}
             />
-          )
-        ))}
+          );
+        })}
       </CardWapper>
+
       <ButtonWapper>
-        <Button buttonText="선택 완료" />
+        {selectedPlayerId !== null ? (
+          <ButtonDefault 
+            buttonText="선택 완료" 
+            onClick={handleComplete} 
+          />
+        ) : (
+          <ButtonGray 
+            buttonText="선택 완료" 
+          />
+        )}
       </ButtonWapper>
     </PageContainer>
   );
@@ -128,8 +144,9 @@ const Icon = styled.img`
 `;
 
 const ButtonWapper = styled.div`
-  width: 362px;
+  width: 100%;
   height: 56px;
+  margin-top: auto;
 `;
 
 const CardWapper = styled.div`
