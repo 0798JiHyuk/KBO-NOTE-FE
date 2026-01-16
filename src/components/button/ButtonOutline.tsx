@@ -3,11 +3,12 @@ import { theme } from '../../styles/theme';
 
 interface ButtonProps {
     buttonText: string;
+    onClick?: () => void;
 }
 
-const Button = ({ buttonText }: ButtonProps) => {
+const Button = ({ buttonText, onClick }: ButtonProps) => {
     return (
-        <Container>
+        <Container onClick={onClick}>
             {buttonText}
         </Container>
     );
