@@ -4,6 +4,7 @@ import App from "./App";
 import LandingPage01 from "./pages/LandingPage01";
 import LandingPage02 from "./pages/LandingPage02";
 import SearchPage from "./pages/SearchPage";
+import Test from "./pages/Test";
 
 const Router = () => {
   const routes = useRoutes([
@@ -26,6 +27,10 @@ const Router = () => {
         {
           path: "searchPage",
           element: <SearchPage />,
+        },
+        {
+          path: "test",
+          element: <Test />,
         }
       ],
     },
